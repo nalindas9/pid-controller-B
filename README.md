@@ -1,6 +1,6 @@
 # pid-controller-B
-[![Build Status](https://travis-ci.org/Karansutradhar/pid-controller-B.svg?branch=master)](https://travis-ci.org/github/Karansutradhar/pid-controller-B)
-[![Coverage Status](https://s3.amazonaws.com/assets.coveralls.io/badges/coveralls_unknown.svg)](https://coveralls.io/github/Karansutradhar/pid-controller-B)
+[![Build Status](https://travis-ci.org/Karansutradhar/pid-controller-B.svg?branch=master)](https://travis-ci.org/Karansutradhar/pid-controller-B)
+[![Coverage Status](https://coveralls.io/repos/github/Karansutradhar/pid-controller-B/badge.svg?branch=master)](https://coveralls.io/github/Karansutradhar/pid-controller-B?branch=master)
 
 # Authors
 
