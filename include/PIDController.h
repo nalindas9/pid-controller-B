@@ -26,13 +26,13 @@
 #include <iostream>
 using namespace std;
 
-class pidController{
+class pidController
+{
 private:
-    double kp;      //Proportional gain
-    double ki;      //Integral gain
-    double kd;      //Derivative gain
-    double dt;        //change in time
-
+    double kp; //Proportional gain
+    double ki; //Integral gain
+    double kd; //Derivative gain
+    double dt; //change in time
 
 public:
     pidController();
@@ -42,27 +42,9 @@ public:
     double changeInTime(double newDt);
 };
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /**
  * @brief finds the position of a given string in a given text
  * @param textInput is the user input text
  * @param stringToSearch is the string to search in the given text
  * @returns location of string in the text in size_t
  */
-
-
-
