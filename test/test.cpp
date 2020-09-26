@@ -22,3 +22,28 @@ TEST(checkCalcVelocity, proportionalCheckTest){
   feedback = numeric_limits<double>::max();
   ASSERT_DOUBLE_EQ(0.0, pidCon.calculateVelocity(setPoint, feedback));
 }
+
+
+TEST(checkCalcVelocity, integralCheckTest){
+  double kp = 0.0; 
+  double ki = 0.01; 
+  double kd = 0; 
+  double dt = 0.1; 
+  pidController pidCon = pidController(kp, ki, kd, dt);
+  auto setPoint = 5;
+  auto feedback = 0;
+  ASSERT_DOUBLE_EQ(0.005, pidCon.calculateVelocity(setPoint, feedback));
+  setPoint = 5;
+  feedback = 0;
+  ASSERT_DOUBLE_EQ(0.01, pidCon.calculateVelocity(setPoint, feedback));
+  setPoint = 5;
+  feedback = 0;
+  ASSERT_DOUBLE_EQ(0.015, pidCon.calculateVelocity(setPoint, feedback));
+  setPoint = 5;
+  feedback = 0;
+  ASSERT_DOUBLE_EQ(0.02, pidCon.calculateVelocity(setPoint, feedback));
+  setPoint = 5;
+  feedback = 5;
+  ASSERT_DOUBLE_EQ(0.02, pidCon.calculateVelocity(setPoint, feedback));
+}
+
