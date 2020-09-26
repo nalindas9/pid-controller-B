@@ -1,7 +1,5 @@
 # pid-controller-B
 
-@@ -6,10 +6,10 @@
-
 # Authors
 
 Part 1:
