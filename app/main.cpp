@@ -31,6 +31,6 @@
 
 int main() {
     pidController pid(0.02, 0.002, 0.002, 0.2);
-    double currentNewVelocity = pid.calculateVelocity(5.0,10.0);
-    cout<<"The new velocity is : "<<currentNewVelocity<<" m/s"<<endl;
+    auto controlOutput = pid.calculateVelocity(5.0,10.0);
+    cout<<"The Control output is : "<<  controlOutput << " units"<<endl;
 }
