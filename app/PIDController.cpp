@@ -25,6 +25,8 @@
 
 /**
  * @brief default constructor of the class pidController
+ * @param none
+ * @return none
  */
 
 pidController::pidController(){}
@@ -47,6 +49,8 @@ pidController::pidController(double kpValue, double kiValue, double kdValue, dou
 
 /**
  * @brief default destructor which destroys the object of the class pidController
+ * @param none
+ * @return none
  */
 
 pidController::~pidController(){}
