@@ -30,7 +30,7 @@
  */
 
 int main() {
-    pidController pid(0.02, 0.002, 0.002, 0.2);
-    auto controlOutput = pid.calculateVelocity(5.0,10.0);
+    pidController pid(0.02, 0.002, 0.002, 0.2);     // Initializing the constructor with the input values of kp, ki, kd, dt
+    auto controlOutput = pid.calculateVelocity(5.0,10.0);       // Calling the calculate velocity method
     cout<<"The Control output is : "<<  controlOutput << " units"<<endl;
 }
