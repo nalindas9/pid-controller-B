@@ -21,18 +21,18 @@
 *  on feedback loop to maintain velocity to required velocity
 */
 
-
 #include <gtest/gtest.h>
 #include <gmock/gmock.h>
 
 /**
- * @brief it is the main function to implement PID Controller
+ * @brief Default main function to run the test blocks
  * @param int argc
  * @param char** argv
  * @returns test values
  */
- 
-int main(int argc, char** argv) {
+
+int main(int argc, char **argv)
+{
   ::testing::InitGoogleTest(&argc, argv);
   return RUN_ALL_TESTS();
 }
