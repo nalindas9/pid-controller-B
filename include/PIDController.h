@@ -43,6 +43,8 @@ class pidController
     
 /**
  * @brief default constructor of the class pidController
+ * @param dtValue variable for initializing the member dt
+ * @return none
  */
     
         pidController();  // Empty Constructor
@@ -60,6 +62,8 @@ class pidController
     
  /**
  * @brief default destructor which destroys the object of the class pidController
+ * @param dtValue variable for initializing the member dt
+ * @return none
  */
     
         ~pidController(); // Destructor
@@ -147,7 +151,7 @@ class pidController
 /**
  * @brief it is a reset method to reset the Integral Errror
  * @param none
- * @return none
+ * @return output velocity
  */    
         void resetIntegralError(); // Reset the Intergrator error
     
