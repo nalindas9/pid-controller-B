@@ -21,7 +21,9 @@
 *  on feedback loop to maintain velocity to required velocity
 */
 
-#include "../include/PIDController.h"
+#include "PIDController.h"
+
+pidController::pidController(){}
 
 pidController::pidController(double kpValue, double kiValue, double kdValue, double dtValue) {
     kp = kpValue;
@@ -29,32 +31,29 @@ pidController::pidController(double kpValue, double kiValue, double kdValue, dou
     kd = kdValue;
     dt = dtValue;
 }
+
+pidController::~pidController(){}
+
+void pidController::setKpGain(double k){}
+
+void pidController::setKiGain(double k){}
+
+void pidController::setKdGain(double k){}
+
+void pidController::setDtVal(double dt){}
+
+double pidController::getDtVal(){return 0.0;}
+
+double pidController::getKpGain(){return 0.0;}
+
+double pidController::getKiGain(){return 0.0;}
+
+double pidController::getKdGain(){return 0.0;}
+
+double pidController::getIntegralError(){return 0.0;}
+
+void pidController::resetIntegralError(){}
+
 double pidController::calculateVelocity(double requiredVelocity, double actualVelocity) {
-    double currentError = requiredVelocity - actualVelocity;
-    double previousError = 0.0, integral = 0.0, derivative = 0.0, finalOutput = 0.0;
-    int count = 0;
-    derivative = (currentError - previousError)/ dt;
-    while (count < 150000){
-        integral = integral + (currentError * dt);
-        finalOutput = kp * currentError + ki * integral + kd * derivative;
-        previousError = currentError;
-        if (requiredVelocity - 0.1 < finalOutput && finalOutput < requiredVelocity + 0.1)
-            break;
-        actualVelocity = finalOutput;
-        count ++;
-        currentError = requiredVelocity - actualVelocity;
-        derivative = (currentError - previousError)/ dt;
-    }
-    if (count == 150000)
-        cout << "Limit reached" << endl;
-    return finalOutput;
+    return 0.0;
 }
-
-double pidController::changeInTime(double newDt) {
-    dt = newDt;
-    return dt;
-}
-
-
-pidController::~pidController() {}
-
