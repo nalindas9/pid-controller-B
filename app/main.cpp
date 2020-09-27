@@ -1,9 +1,9 @@
 /**
 * @file main.cpp
-* @author
+* @authors
 *
 * Karan Sutradhar (117037272)
-* Vishnuu Appaya Dhanabalan
+* Vishnuu Appaya Dhanabalan (116873314)
 *
 * @version 1.0
 *
@@ -16,8 +16,8 @@
 *
 * @section DESCRIPTION
 *
-*  This is main.cpp file for printing position this file implements
-*  the code to o compute the velocity with minimum error and works
+*  This is main.cpp file for PID Controller this file implements
+*  the code to compute the velocity with minimum error and works
 *  on feedback loop to maintain velocity to required velocity
 */
 
@@ -25,7 +25,7 @@
 #include "PIDController.h"
 
 /**
- * @brief it is the main function to print the position of the string in given text
+ * @brief it is the main function to implement PID Controller
  * @returns 0
  */
 
