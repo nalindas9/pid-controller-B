@@ -16,9 +16,8 @@
 *
 * @section DESCRIPTION
 *
-*  This is main.cpp file for PID Controller this file implements
-*  the code to compute the velocity with minimum error and works
-*  on feedback loop to maintain velocity to required velocity
+*  This is main.cpp file for the test this file implements
+*  the unit test cases
 */
 
 
