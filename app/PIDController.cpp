@@ -3,7 +3,7 @@
 * @author
 *
 * Karan Sutradhar (117037272)
-* Vishnuu Appaya Dhanabalan
+* Vishnuu Appaya Dhanabalan (116873314)
 *
 * @version 1.0
 *
@@ -17,11 +17,18 @@
 * @section DESCRIPTION
 *
 *  This is cpp file for PIDController.cpp this file implements
-*  the code o compute the velocity with minimum error and works
+*  the code to compute the velocity with minimum error and works
 *  on feedback loop to maintain velocity to required velocity
 */
 
 #include "PIDController.h"
+
+/**
+ * @brief parameterized constructor to initialize the private members
+ * @param textInput is the user input text
+ * @param stringToSearch is the string to search in the given text
+ * @returns location of string in the text in size_t
+ */
 
 pidController::pidController(){}
 
