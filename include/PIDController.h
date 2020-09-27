@@ -1,5 +1,4 @@
-/**
-* @file PIDController.h
+/** @file PIDController.h
 * @author
 *
 * Karan Sutradhar (117037272)
@@ -28,23 +27,26 @@ using namespace std;
 
 class pidController
 {
-private:
-    double kp; //Proportional gain
-    double ki; //Integral gain
-    double kd; //Derivative gain
-    double dt; //change in time
+    private:
+        double kp; //Proportional gain
+        double ki; //Integral gain
+        double kd; //Derivative gain
+        double dt; //change in time
+        double intgrError; // integral of all error over time.  
 
-public:
-    pidController();
-    pidController(double kpValue, double kiValue, double kdValue, double dtValue);
-    ~pidController();
-    double calculateVelocity(double requiredVelocity, double actualVelocity);
-    double changeInTime(double newDt);
+    public:
+        pidController();  // Empty Constructor  
+        pidController(double kpValue, double kiValue, double kdValue, double dtValue); // Value Constructor
+        ~pidController(); // Destructor
+        void setKpGain(double k); // Update Kp Gain on the fly
+        void setKiGain(double k); // Update Ki Gain on the fly
+        void setKdGain(double k); // Update Kd Gain on the fly
+        void setDtVal(double newDt); // Update Dt Val on the fly
+        double getKpGain(); // Get Kp Gain
+        double getKiGain(); // Get Ki Gain
+        double getKdGain(); // Get Kd Gain
+        double getDtVal(); // Get Dt Val
+        double getIntegralError(); // Get Integral Error value being tracked. 
+        double calculateVelocity(double requiredVelocity, double actualVelocity); // Compute the PID Output
+        void resetIntegralError(); // Reset the Intergrator error
 };
-
-/**
- * @brief finds the position of a given string in a given text
- * @param textInput is the user input text
- * @param stringToSearch is the string to search in the given text
- * @returns location of string in the text in size_t
- */
