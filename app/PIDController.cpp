@@ -37,6 +37,8 @@ pidController::pidController(){}
  * @param kiValue variable for initializing the member ki
  * @param kdValue variable for initializing the member kd
  * @param dtValue variable for initializing the member dt
+ * @param previousError variable for initializing the member previousError
+ * @param controlOutput variable for initializing the member controlOutput
  * @return none
  */ 
 
@@ -45,6 +47,8 @@ pidController::pidController(double kpValue, double kiValue, double kdValue, dou
     ki = kiValue;
     kd = kdValue;
     dt = dtValue;
+    previousError = 0;
+    controlOutput = 0;
 }
 
 /**
@@ -133,7 +137,7 @@ double pidController::getIntegralError(){return intgrError;}
  * @return none
  */
 
-void pidController::resetIntegralError(){}
+void pidController::resetIntegralError(){intgrError = 0;}
 
 /**
  * @brief it is a method to compute the output velocity
@@ -143,5 +147,9 @@ void pidController::resetIntegralError(){}
  */
 
 double pidController::calculateVelocity(double requiredVelocity, double actualVelocity) {
-    return 0.0;
+    double error = requiredVelocity - actualVelocity;
+    intgrError += error;
+    controlOutput = (kp*error) + (ki*intgrError) + (kd/dt)*(error-previousError);
+    previousError = error;
+    return controlOutput;
 }
