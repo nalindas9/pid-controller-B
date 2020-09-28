@@ -11,8 +11,8 @@ Part 1:
 
 For part 2:
 
-    Driver: Sukoon Sarin
-    Navigator: Nalin Das
+    Driver: Nalin Das
+    Navigator: Sukoon Sarin
     
 # TODO
 
