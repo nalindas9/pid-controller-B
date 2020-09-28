@@ -40,6 +40,8 @@ namespace
    * @brief This block tests the proportional part of PID control block. 
    * @brief Except Kp gain, all gains are set to be 0. 
    * @brief The methods setKpGain, getKpGain, setDtVal, getDtVal, calculateVelocity are evalulated here.
+   * @param None
+   * @return None
   */
   TEST_F(checkPIDClass, proportionalCheckTest1)
   {
@@ -67,6 +69,8 @@ namespace
    * @brief This block tests the Integral part of PID control block. 
    * @brief Except Ki gain, all gains are set to be 0. 
    * @brief The methods setKiGain, getKiGain, setDtVal, getDtVal, calculateVelocity are evalulated here.
+   * @param None
+   * @return None
   */
   TEST_F(checkPIDClass, integralCheckTest)
   {
@@ -102,6 +106,8 @@ namespace
    * @brief This block tests the Derivative part of PID control block. 
    * @brief Except Kd gain, all gains are set to be 0. 
    * @brief The methods setKdGain, getKdGain, setDtVal, getDtVal, calculateVelocity are evalulated here.
+   * @param None
+   * @return None
   */
   TEST_F(checkPIDClass, derivativeCheckTest)
   {
@@ -129,6 +135,8 @@ namespace
    * @brief This block tests the combined PID control block. 
    * @brief All three values are set to be non-zero and evaluated. 
    * @brief The methods set and get are evalulated here.
+   * @param None
+   * @return None
   */
   TEST_F(checkPIDClass, combinedTest)
   {
@@ -157,6 +165,8 @@ namespace
    * @brief Specifically tests the function getDtVal and setDtVal 
    * @brief Except Ki gain, all gains are set to be 0. 
    * @brief The methods setKiGain, getKiGain, setDtVal, getDtVal, calculateVelocity are evalulated here.
+   * @param None
+   * @return None
   */
   TEST_F(checkPIDClass, validDtTest)
   {
