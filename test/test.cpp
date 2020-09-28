@@ -3,7 +3,7 @@
  * @brief Makes use of Google mock's Setup and TearDown features for testing classes.
  */
 #include <gtest/gtest.h>
-#include <PIDController.h>
+#include "../include/PIDController.h"
 #include <limits>
 #include <gmock/gmock.h>
 
