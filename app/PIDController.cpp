@@ -29,7 +29,12 @@
  * @return none
  */
 
-pidController::pidController(){}
+pidController::pidController(){
+    kp = 0;
+    ki = 0;
+    kd = 0;
+    dt = 0.1;
+    prevError = 0;}
 
 /**
  * @brief parameterized constructorof class pidController to initialize the private members
@@ -47,8 +52,7 @@ pidController::pidController(double kpValue, double kiValue, double kdValue, dou
     ki = kiValue;
     kd = kdValue;
     dt = dtValue;
-    previousError = 0;
-    controlOutput = 0;
+    prevError = 0;
 }
 
 /**
@@ -89,7 +93,7 @@ void pidController::setKdGain(double k){kd = k;}
  * @return none
  */
 
-void pidController::setDtVal(double dt){dt = dt;}
+void pidController::setDtVal(double dT){(dT > 0) ? dt = dT: 1;}
 
 /**
  * @brief it is a getter method to get the Dt member variable
@@ -148,8 +152,8 @@ void pidController::resetIntegralError(){intgrError = 0;}
 
 double pidController::calculateVelocity(double requiredVelocity, double actualVelocity) {
     double error = requiredVelocity - actualVelocity;
-    intgrError += error;
-    controlOutput = (kp*error) + (ki*intgrError) + (kd/dt)*(error-previousError);
-    previousError = error;
-    return controlOutput + actualVelocity;
+    intgrError += error*dt;
+    double controlOutput = (kp*error) + (ki*intgrError) + (kd/dt)*(error-prevError);
+    prevError = error;
+    return controlOutput;
 }
