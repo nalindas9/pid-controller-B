@@ -151,5 +151,5 @@ double pidController::calculateVelocity(double requiredVelocity, double actualVe
     intgrError += error;
     controlOutput = (kp*error) + (ki*intgrError) + (kd/dt)*(error-previousError);
     previousError = error;
-    return controlOutput;
+    return controlOutput + actualVelocity;
 }
