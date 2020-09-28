@@ -38,7 +38,7 @@ class pidController
         double kd; //Derivative gain
         double dt; //change in time
         double intgrError; // integral of all error over time.  
-
+        double prevError; 
     public:
     
 /**
