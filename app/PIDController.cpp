@@ -93,7 +93,7 @@ void pidController::setDtVal(double dt){dt = dt;}
  * @return 0.0
  */
 
-double pidController::getDtVal(){return 0.0;}
+double pidController::getDtVal(){return dt;}
 
 /**
  * @brief it is a getter method to get the Kp member variable
@@ -101,7 +101,7 @@ double pidController::getDtVal(){return 0.0;}
  * @return 0.0
  */
 
-double pidController::getKpGain(){return 0.0;}
+double pidController::getKpGain(){return kp;}
 
 /**
  * @brief it is a getter method to get the Ki member variable
@@ -109,7 +109,7 @@ double pidController::getKpGain(){return 0.0;}
  * @return 0.0
  */
 
-double pidController::getKiGain(){return 0.0;}
+double pidController::getKiGain(){return ki;}
 
 /**
  * @brief it is a getter method to set the Kd member variable
@@ -117,7 +117,7 @@ double pidController::getKiGain(){return 0.0;}
  * @return 0.0
  */
 
-double pidController::getKdGain(){return 0.0;}
+double pidController::getKdGain(){return kd;}
 
 /**
  * @brief it is a getter method to get the IntergralError variable
@@ -125,7 +125,7 @@ double pidController::getKdGain(){return 0.0;}
  * @return 0.0
  */
 
-double pidController::getIntegralError(){return 0.0;}
+double pidController::getIntegralError(){return intgrError;}
 
 /**
  * @brief it is a reset method to reset the Integral Errror
