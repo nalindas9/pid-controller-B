@@ -13,6 +13,10 @@ For part 2:
 
     Driver: Sukoon Sarin
     Navigator: Nalin Das
+    
+# TODO
+
+Complete the implementation of the PIDController.
 
 ## Overview
 
@@ -20,6 +24,8 @@ Simple starter C++ project with:
 
 - cmake
 - googletest
+- Travis CI
+- Coveralls
 
 ## Standard install via command-line
 ```
