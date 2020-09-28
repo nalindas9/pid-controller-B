@@ -110,7 +110,7 @@ namespace
     pidCon->setKdGain(kd);
     pidCon->setDtVal(dt);
     ASSERT_DOUBLE_EQ(dt, pidCon->getDtVal());
-    ASSERT_DOUBLE_EQ(kd, pidCon->getKiGain());
+    ASSERT_DOUBLE_EQ(kd, pidCon->getKdGain());
     double setPoint = 5;
     double feedback = 0;
     ASSERT_DOUBLE_EQ(5.0, pidCon->calculateVelocity(setPoint, feedback));
@@ -146,10 +146,10 @@ namespace
     ASSERT_DOUBLE_EQ(dt, pidCon->getDtVal());
     double setPoint = -5;
     double feedback = 0;
-    ASSERT_DOUBLE_EQ(5.0 + 0.005 + 5, pidCon->calculateVelocity(setPoint, feedback));
+    ASSERT_DOUBLE_EQ(.50 + 0.05 + .5, pidCon->calculateVelocity(setPoint, feedback));
     setPoint = 5;
     feedback = 0;
-    ASSERT_DOUBLE_EQ(-5.0 + 0.0 - 10, pidCon->calculateVelocity(setPoint, feedback));
+    ASSERT_DOUBLE_EQ(-.50 + 0.0 - 1, pidCon->calculateVelocity(setPoint, feedback));
   }
 
   /**
