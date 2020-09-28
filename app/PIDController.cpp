@@ -61,7 +61,7 @@ pidController::~pidController(){}
  * @return none
  */
 
-void pidController::setKpGain(double k){}
+void pidController::setKpGain(double k){kp = k;}
 
 /**
  * @brief it is a setter method to set the Ki variable to a new value
@@ -69,7 +69,7 @@ void pidController::setKpGain(double k){}
  * @return none
  */
 
-void pidController::setKiGain(double k){}
+void pidController::setKiGain(double k){ki = k;}
 
 /**
  * @brief it is a setter method to set the Kd variable to a new value
@@ -77,7 +77,7 @@ void pidController::setKiGain(double k){}
  * @return none
  */
 
-void pidController::setKdGain(double k){}
+void pidController::setKdGain(double k){kd = k;}
 
 /**
  * @brief it is a setter method to set the Dt variable to a new value
@@ -85,7 +85,7 @@ void pidController::setKdGain(double k){}
  * @return none
  */
 
-void pidController::setDtVal(double dt){}
+void pidController::setDtVal(double dt){dt = dt;}
 
 /**
  * @brief it is a getter method to get the Dt member variable
