@@ -2,7 +2,7 @@
 [![Build Status](https://travis-ci.org/Karansutradhar/pid-controller-B.svg?branch=master)](https://travis-ci.org/Karansutradhar/pid-controller-B)
 [![Coverage Status](https://coveralls.io/repos/github/Karansutradhar/pid-controller-B/badge.svg?branch=master)](https://coveralls.io/github/Karansutradhar/pid-controller-B?branch=master)
 
-# Authors
+## Authors
 
 Part 1:
 
@@ -13,6 +13,17 @@ For part 2:
 
     Driver: Nalin Das
     Navigator: Sukoon Sarin
+
+## To-Do's
+
+None
+
+## Notes
+These notes are based on the design review discussion:
+1. Implementation and build passes successfully.
+2. Need to modify current test cases to increase coverage.
+3. The initial implementation did not have the previous error & integral error attributes. Corrected that and intialized value to zero.
+
 
 ## Overview
 
