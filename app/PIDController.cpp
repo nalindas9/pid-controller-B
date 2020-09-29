@@ -34,6 +34,7 @@ pidController::pidController(){
     ki = 0;
     kd = 0;
     dt = 0.1;
+    intgrError = 0;
     prevError = 0;}
 
 /**
@@ -52,6 +53,7 @@ pidController::pidController(double kpValue, double kiValue, double kdValue, dou
     ki = kiValue;
     kd = kdValue;
     dt = dtValue;
+    intgrError = 0;
     prevError = 0;
 }
 
