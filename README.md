@@ -13,16 +13,6 @@ For part 2:
 
     Driver: Nalin Das
     Navigator: Sukoon Sarin
-    
-# TODO
-
-1. Add test cases to increase coverage [@Karansutradhar](https://github.com/Karansutradhar)
-
-# DISCUSSIONS
-
-1. 
-2.
-3.
 
 ## Overview
 
