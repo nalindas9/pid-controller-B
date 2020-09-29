@@ -143,7 +143,7 @@ class pidController
  * @brief it is a method to compute the output velocity
  * @param double requiredVelocity
  * @param double actualVelocity
- * @return 0.0
+ * @return output velocity
  */ 
     
         double calculateVelocity(double requiredVelocity, double actualVelocity); // Compute the PID Output
@@ -151,7 +151,7 @@ class pidController
 /**
  * @brief it is a reset method to reset the Integral Errror
  * @param none
- * @return output velocity
+ * @return none
  */    
         void resetIntegralError(); // Reset the Intergrator error
     
