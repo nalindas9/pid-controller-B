@@ -21,7 +21,7 @@
 *  on feedback loop to maintain velocity to required velocity
 */
 
-#include "PIDController.h"
+#include "../include/PIDController.h"
 
 /**
  * @brief default constructor of the class pidController
@@ -29,7 +29,12 @@
  * @return none
  */
 
-pidController::pidController(){}
+pidController::pidController(){
+    kp = 0;
+    ki = 0;
+    kd = 0;
+    dt = 0.1;
+    prevError = 0;}
 
 /**
  * @brief parameterized constructorof class pidController to initialize the private members
@@ -37,6 +42,8 @@ pidController::pidController(){}
  * @param kiValue variable for initializing the member ki
  * @param kdValue variable for initializing the member kd
  * @param dtValue variable for initializing the member dt
+ * @param previousError variable for initializing the member previousError
+ * @param controlOutput variable for initializing the member controlOutput
  * @return none
  */ 
 
@@ -45,6 +52,7 @@ pidController::pidController(double kpValue, double kiValue, double kdValue, dou
     ki = kiValue;
     kd = kdValue;
     dt = dtValue;
+    prevError = 0;
 }
 
 /**
@@ -61,7 +69,7 @@ pidController::~pidController(){}
  * @return none
  */
 
-void pidController::setKpGain(double k){}
+void pidController::setKpGain(double k){kp = k;}
 
 /**
  * @brief it is a setter method to set the Ki variable to a new value
@@ -69,7 +77,7 @@ void pidController::setKpGain(double k){}
  * @return none
  */
 
-void pidController::setKiGain(double k){}
+void pidController::setKiGain(double k){ki = k;}
 
 /**
  * @brief it is a setter method to set the Kd variable to a new value
@@ -77,7 +85,7 @@ void pidController::setKiGain(double k){}
  * @return none
  */
 
-void pidController::setKdGain(double k){}
+void pidController::setKdGain(double k){kd = k;}
 
 /**
  * @brief it is a setter method to set the Dt variable to a new value
@@ -85,7 +93,7 @@ void pidController::setKdGain(double k){}
  * @return none
  */
 
-void pidController::setDtVal(double dt){}
+void pidController::setDtVal(double dT){(dT > 0) ? dt = dT: 1;}
 
 /**
  * @brief it is a getter method to get the Dt member variable
@@ -93,7 +101,7 @@ void pidController::setDtVal(double dt){}
  * @return 0.0
  */
 
-double pidController::getDtVal(){return 0.0;}
+double pidController::getDtVal(){return dt;}
 
 /**
  * @brief it is a getter method to get the Kp member variable
@@ -101,7 +109,7 @@ double pidController::getDtVal(){return 0.0;}
  * @return 0.0
  */
 
-double pidController::getKpGain(){return 0.0;}
+double pidController::getKpGain(){return kp;}
 
 /**
  * @brief it is a getter method to get the Ki member variable
@@ -109,7 +117,7 @@ double pidController::getKpGain(){return 0.0;}
  * @return 0.0
  */
 
-double pidController::getKiGain(){return 0.0;}
+double pidController::getKiGain(){return ki;}
 
 /**
  * @brief it is a getter method to set the Kd member variable
@@ -117,7 +125,7 @@ double pidController::getKiGain(){return 0.0;}
  * @return 0.0
  */
 
-double pidController::getKdGain(){return 0.0;}
+double pidController::getKdGain(){return kd;}
 
 /**
  * @brief it is a getter method to get the IntergralError variable
@@ -125,7 +133,7 @@ double pidController::getKdGain(){return 0.0;}
  * @return 0.0
  */
 
-double pidController::getIntegralError(){return 0.0;}
+double pidController::getIntegralError(){return intgrError;}
 
 /**
  * @brief it is a reset method to reset the Integral Errror
@@ -133,15 +141,19 @@ double pidController::getIntegralError(){return 0.0;}
  * @return none
  */
 
-void pidController::resetIntegralError(){}
+void pidController::resetIntegralError(){intgrError = 0;}
 
 /**
  * @brief it is a method to compute the output velocity
  * @param double requiredVelocity
  * @param double actualVelocity
- * @return 0.0
+ * @return control output
  */
 
 double pidController::calculateVelocity(double requiredVelocity, double actualVelocity) {
-    return 0.0;
+    double error = requiredVelocity - actualVelocity;
+    intgrError += error*dt;
+    double controlOutput = (kp*error) + (ki*intgrError) + (kd/dt)*(error-prevError);
+    prevError = error;
+    return controlOutput;
 }
