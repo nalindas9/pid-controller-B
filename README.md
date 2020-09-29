@@ -16,7 +16,13 @@ For part 2:
     
 # TODO
 
-Complete the implementation of the PIDController.
+1. Add test cases to increase coverage [@Karansutradhar](https://github.com/Karansutradhar)
+
+# DISCUSSIONS
+
+1. 
+2.
+3.
 
 ## Overview
 
