@@ -147,7 +147,7 @@ void pidController::resetIntegralError(){intgrError = 0;}
  * @brief it is a method to compute the output velocity
  * @param double requiredVelocity
  * @param double actualVelocity
- * @return 0.0
+ * @return control output
  */
 
 double pidController::calculateVelocity(double requiredVelocity, double actualVelocity) {
