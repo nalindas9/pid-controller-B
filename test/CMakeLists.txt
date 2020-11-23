@@ -17,4 +17,4 @@ include_directories(
 target_include_directories(cpp-test PUBLIC ../vendor/googletest/googletest/include 
                                            ${CMAKE_SOURCE_DIR}/include
                                            ../vendor/googletest/googlemock/include)
-target_link_libraries(cpp-test PUBLIC gtest)
+target_link_libraries(cpp-test PUBLIC gtest gmock)
