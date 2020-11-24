@@ -24,14 +24,15 @@
 #pragma once
 
 #include <iostream>
+#include "IPIDController.h"
+
 using namespace std;
 
 /**
  * @brief it is the declaration of pidController Class
  */
 
-class pidController
-{
+class pidController : public virtual IPIDController {
     private:
         double kp; //Proportional gain
         double ki; //Integral gain

@@ -30,8 +30,8 @@ class IPIDController {
      * @param double actualVelocity
      * @return output velocity
      */ 
-    virtual calculateVelocity(double requiredVelocity,
-                              double actualVelocity) = 0; 
+    virtual double calculateVelocity(double requiredVelocity,
+                                     double actualVelocity) = 0; 
 };
 
 #endif
